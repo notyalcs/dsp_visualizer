@@ -9,7 +9,13 @@ enable_language(C CXX)
 
 add_subdirectory(FMOD)
 
-add_executable(${PROJECT_NAME} main.cpp)
+set(SOURCES)
+set(HEADERS)
+
+list(APPEND SOURCES main.cpp AudioEngine.cpp)
+list(APPEND HEADERS AudioEngine.hpp)
+
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_link_libraries(${PROJECT_NAME} fmod_core fmod_studio)
 

@@ -1,0 +1,41 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 28,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "base",
+            "binaryDir": "${sourceDir}/out/${presetName}",
+            "hidden": true
+        },
+        {
+            "name": "base-VisualStudio",
+            "inherits": "base",
+            "generator": "Visual Studio 17 2022",
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "hostOS": "Windows"
+                }
+            },
+            "hidden": true
+        },
+        {
+            "name": "windows",
+            "inherits": "base-VisualStudio",
+            "cmakeExecutable": "$env{PROGRAMFILES}/CMake/bin/cmake.exe",
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "windows",
+            "configurePreset": "windows"
+        }
+    ]
+}

@@ -7,7 +7,7 @@ project(Visualizer VERSION 0.1.0)
 set(CMAKE_CXX_STANDARD 23)
 enable_language(C CXX)
 
-# add_subdirectory(FMOD)
+add_subdirectory(FMOD)
 
 set(SOURCES)
 set(HEADERS)

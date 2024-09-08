@@ -1,0 +1,3 @@
+[submodule ".\\FMOD"]
+	path = .\\FMOD
+	url = https://github.com/notyalcs/fmod_api.git
